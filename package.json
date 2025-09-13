@@ -1,0 +1,22 @@
+{
+  "name": "superheroes",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "test": "jest --runInBand",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
+    "build": "npm --prefix server run build && npm --prefix client run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
